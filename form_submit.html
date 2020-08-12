@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QR Scan Reg. Form</title>
+    <link rel="stylesheet" href="w3pro.css">
+      </head>
+    
+    <body>
+
+
+      <header class="container">
+        <div class="a-h1">GT/BW -Covid-19 QR Scan Registration Form  <div>
+      </header>
+      
+<div class="w3-container w3-margin-top">
+
+<body> 
+  
+          <form class="w3-container w3-card-4 w3-half"  id="contactForm" >
+          <img src="check.ico"  alt="check"  class="center">
+          <p class="a-h4">You have successfully registered. Thank You!</p>
+          
+          <p class="a-h4"> Name: <span id="result"></span></p>
+         
+          <script>
+              document.getElementById("result").innerHTML = localStorage.getItem("username");
+         </script>
+        
+          <p class="a-h4">Date & Time: <span  id="dt"></span></p>
+          <script>
+           {
+            var d = new Date();
+            var n = d.toLocaleString();
+            document.getElementById("dt").innerHTML = n;
+          }
+          </script>
+             
+            </form>
+            
+    </div>
+  </div>
+
+
+    <p class="a-h5" id="crdate" ></p>
+  <script>
+  var c = new Date();
+  var cdate = c.toLocaleString();
+  document.getElementById("crdate").innerHTML = cdate;
+  </script>
+  </div>
+
+   <script src="main.js"></script>
+</body>
+</html>

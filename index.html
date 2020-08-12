@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QR Scan Reg. Form</title>
+    <link rel="stylesheet" href="w3pro.css">
+    </head>
+    
+    <body>
+  
+      
+<header class="container">
+  <div class="a-h1">GT/BW -Covid-19 QR Scan Registration Form  <div>
+</header>
+
+
+<div class="w3-container  w3-margin-top">
+
+<form class="w3-container w3-card-4 w3-half "  id="contactForm" >
+  <h3 >Please fill in the following details</h3>
+   <p ></p>
+<p class="big"><label>Nama - (Name)</label>
+<input  type="text" name="name" id="name" style="width:90%" required>
+</p>
+
+<p class="big"><label>Nombor Telefon - (Mobile Number)</label>
+  <input  type="number" name="phone" id="phone" style="width:90%" required>
+</p>
+
+<p class="big">
+  <label>Suhu Badan - (Body Temperature)</label> 
+  <input type="number" step= "0.01" name ="bodytemp" id="bodytemp" style="width:90%" required>
+</p>
+
+<p>Dengan ini, saya mengakui bahawa butiran yang diisi adalah betul dan tepat.   
+  (I hereby acknowledge that the information given in this form is correct and accurate.)                                                                                                                                                                                                             </p>
+  <p>
+
+    <p class="big">
+      <input id="agree" class="w3-check" type="checkbox" required >
+      <label>Setuju/Agree.</label></p>
+
+
+    <p>
+    <!-- onlick go to passvalue function-->
+    <button id="submit" class="button button1" onclick="passvalue(); " >Submit</button>
+   </p>
+ 
+
+</form>
+</div>
+
+<p class="a-h5" id="crdate" ></p>
+<script>
+var c = new Date();
+var cdate = c.toLocaleString();
+document.getElementById("crdate").innerHTML = cdate;
+</script>
+
+
+<script>
+function passvalue(){
+ var uname=document.getElementById("name").value;
+ localStorage.setItem('username', uname);
+ return false
+}
+</script>
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase.js"></script>
+ <script src="main.js"></script>
+
+
+</body>
+</html> 
