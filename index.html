@@ -1,151 +1,85 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Clock Punch</title>
+    <title>Check-In Reg. Form</title>
     <link rel="stylesheet" href="w3pro.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chango">
-    <link rel="manifest" href="manifest.json">
-    <style>
-    body
-    
-    {
-      font-family: "Chango";
-      font-size: 30px;
-      color: darkcyan;
-      margin-left: 2%;
-          
-    }
-
-      h11 {
-        margin-left: 10%;
-        font-family: "Chango";
-        
-                font-size: 40%;
-        font-weight: 100;
-               color: burlywood; 
-      }
-      h22 {
-         
-        font-family: "Chango";
-        font-size: 50%;
-        font-weight: 50;
-               color: darkcyan; 
-               
-      }
-
-      h33 {
-         
-        font-family: "Chango";
-        font-size: 40%;
-        font-weight: 100;
-               color: darkcyan; 
-      }
-      </style>
-
     </head>
-       
-      <body onload="getLocation()">
-<header>
-      Clock Punch
+    
+    <body>
+  
+      
+<header class="container">
+  <div class="a-h1">GT/BW - Check-In Registration  <div>
 </header>
 
 
+<div class="w3-container  w3-margin-top">
+
+<form class="w3-container w3-card-4 w3-half "  id="contactForm" >
+  <h3 >Please fill in the following details</h3>
+   <p ></p>
+<p class="big"><label>Nama - (Name)</label>
+<input  type="text" name="name" id="name" style="width:90%"  required>
+</p>
+<script>
+  document.getElementById("name").value = localStorage.getItem("username");
+</script>
+
+<p class="big"><label>Nombor Telefon - (Mobile Number)</label>
+  <input  type="number" name="phone" id="phone" style="width:90%" required>
+</p>
+
+<p class="big">
+  <label>Suhu Badan - (Body Temperature)</label> 
+  <input type="number" step= "0.01" name ="bodytemp" id="bodytemp" style="width:90%" required>
+</p>
+
+<p>Dengan ini, saya mengakui bahawa butiran yang diisi adalah betul dan tepat.   
+  (I hereby acknowledge that the information given in this form is correct and accurate.)                                                                                                                                                                                                             </p>
+  <p>
+
+    <p class="big">
+      <input id="agree" class="w3-check" type="checkbox" required >
+      <label>Setuju/Agree.</label></p>
+
+
+    <p>
+    <!-- onlick go to passvalue function-->
+    <button id="submit" class="button button1" onclick="passvalue(); " >Submit</button>
+   </p>
+
+
+  <!-- <p class="big"><label>Nama - (Name)</label>
+    <input  type="text"  name="name1" id="name1" style="width:90%"  required>
+      </p>
+
+      <script>
+                    document.getElementById("name1").value = localStorage.getItem("username");
+                </script>
+              -->
+</form>
+</div>
 
 <p class="a-h5" id="crdate" ></p>
-<p class="a-h5" >Your Current Location :</p>
-<p class="a-h5" id="Loc"></p>
-
-
 <script>
 var c = new Date();
 var cdate = c.toLocaleString();
 document.getElementById("crdate").innerHTML = cdate;
-
 </script>
 
 
-  <form class="w3-container w3-card-4 w3-half "  id="clockme" >
- 
-
-  <p class="big"><label><h22>Pass No</h22></label> <br>
-  <h33>
-<input  type="text" name="passno" id="passno" style="width:80%"  required></h33>
-  </br>
 <script>
-  document.getElementById("passno").value = localStorage.getItem("passno1");
-</script>
-
-
-
-<p class="big"><label><h22>Name</h22></label> <br>
-  <h33>
-  <input  type="text" name="name" id="name" style="width:80%"  required></h33>
-  </br>
-  <script>
-    document.getElementById("name").value = localStorage.getItem("username1");
-  </script>
-<p></p>
-    <!-- onlick go to passvalue function-->
-    <button id="submit" class="button button1" onclick="passvalue(); " ><h33>Punch</h33> </button>
-
-    <input type="hidden" id="latitude"  >
-    <input type="hidden" id="longtitude"  >
-  
- 
-</form>
-
-
-<script>
-
-  function passvalue(){
-   var pno=document.getElementById("passno").value;
-   localStorage.setItem('passno1', pno);
-  
+function passvalue(){
  var uname=document.getElementById("name").value;
- localStorage.setItem('username1', uname);
- 
+ localStorage.setItem('username', uname);
  return false
 }
 </script>
-
-<script>
-var x = document.getElementById("Loc");
- 
-  function getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-      x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-  }
-  
-  function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
-  
-    var Loc = {
-          longitude: position.coords.longitude,
-          latitude: position.coords.latitude
-        }
-        console.log(Loc)
-     
-    // localStorage.setItem("latitude", position.coords.latitude);
-     // localStorage.setItem("longitude", position.coords.longitude); 
-     document.getElementById("latitude").value =  position.coords.latitude;
-     document.getElementById("longtitude").value =  position.coords.longitude;
-
-       }
-   
-  </script>
-
-
-
-
 <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase.js"></script>
-
  <script src="main.js"></script>
 
 

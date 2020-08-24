@@ -1,79 +1,33 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Clock Punch</title>
+    <title>Check-In Reg. Form</title>
     <link rel="stylesheet" href="w3pro.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chango">
-    <style>
-    body {
-      font-family: "Chango";
-      font-size: 30px;
-      color: darkcyan;
-      margin-left: 2%
-      
-      
-    }
-
-      h11 {
-        margin-left: 10%;
-        font-family: "Chango";
-        
-                font-size: 40%;
-        font-weight: 100;
-               color: burlywood; 
-      }
-      h22 {
-         
-        font-family: "Chango";
-        font-size: 50%;
-        font-weight: 50;
-               color: darkcyan; 
-      }
-
-      h33 {
-         
-        font-family: "Chango";
-        font-size: 40%;
-        font-weight: 100;
-               color: darkcyan; 
-      }
-      </style>
-
-    </head>
+      </head>
     
     <body>
-  
-      <header>
-        Clock Punch
-  </header>
-  
-  </form>
-  </div>
-  <p class="a-h5" id="crdate" ></p>
-  <script>
-  var c = new Date();
-  var cdate = c.toLocaleString();
-  document.getElementById("crdate").innerHTML = cdate;
-  </script>
-  
-  
-  <div class="w3-container  w3-margin-top">
-  
+
+
+      <header class="container">
+        <div class="a-h1">GT/BW -Check-In Registration <div>
+      </header>
+      
+<div class="w3-container w3-margin-top">
 
 <body> 
   
-          <form class="w3-container w3-card-4 w3-half"  id="clockme" >
+          <form class="w3-container w3-card-4 w3-half"  id="contactForm" >
           <img src="check.ico"  alt="check"  class="center">
-          
-          <p class="a-h4">You have successfully Punched.</p> 
+          <p class="a-h4">You have successfully registered. Thank You!</p>
           
           <p class="a-h4"> Name: <span id="result"></span></p>
          
           <script>
-              document.getElementById("result").innerHTML = localStorage.getItem("username1");
+              document.getElementById("result").innerHTML = localStorage.getItem("username");
          </script>
         
           <p class="a-h4">Date & Time: <span  id="dt"></span></p>
@@ -99,6 +53,6 @@
   </script>
   </div>
 
- <!--  <script src="main.js"></script> -->
+   <script src="main.js"></script>
 </body>
 </html>
